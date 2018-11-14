@@ -1,7 +1,0 @@
-@import "~@angular/material/prebuilt-themes/indigo-pink.css";
-
-img { max-width: 100%; }
-.centered { text-align: center }
-mat-form-field { min-width: 80%; }
-.spinner { margin: 10px auto; }
-mat-icon, mat-list-item {cursor: pointer;}
