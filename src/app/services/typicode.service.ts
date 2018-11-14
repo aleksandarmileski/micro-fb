@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 })
 export class TypicodeService {
 
-  URL = 'https://jsonplaceholder.typicode.com';
+  URL = 'http://jsonplaceholder.typicode.com';
   startPhoto = 0;
   limitPhoto = 10;
 

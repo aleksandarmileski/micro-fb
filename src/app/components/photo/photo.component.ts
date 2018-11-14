@@ -4,9 +4,9 @@ import { Observable } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
 
 import { Photo } from './../../data/photo.interface';
-import { TypicodeService } from 'src/app/services/typicode.service';
 import { MatDialog } from '@angular/material';
 import { ConfirmDeleteDialogComponent } from '../confirm-delete-dialog/confirm-delete-dialog.component';
+import { TypicodeService } from '../../services/typicode.service';
 
 @Component({
   selector: 'app-photo',
@@ -41,7 +41,7 @@ export class PhotoComponent implements OnInit {
   saveChanges(photo) {
     this.editTitle = false;
     this.typicodeService.updatePhoto(photo)
-      .subscribe(console.log)
+      .subscribe(() => { })
   }
 
   deletePhoto(photo) {
