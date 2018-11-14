@@ -1,0 +1,24 @@
+<div class="centered">
+  <button mat-raised-button color="warn" [routerLink]="['/add-photo']" >
+    <mat-icon>add_circle</mat-icon>Add new Photo
+  </button>
+</div>
+<div class="photos-container" *ngIf="(!loading && photos);else loadingPhotos">
+  <div>
+    <mat-list>
+      <mat-list-item *ngFor="let photo of photos" [routerLink]="['/photos', photo.id]">
+        <img matListAvatar [src]="photo.thumbnailUrl" alt="Invalid Photo URL">
+        <h3 matLine>{{photo.title}}</h3>
+      </mat-list-item>
+    </mat-list>
+    <div class="centered">
+      <button *ngIf="checkMinPhoto()" mat-button (click)="loadPhotos('prev')">
+        <mat-icon color="primary" class="photo-nav">skip_previous</mat-icon>Prev
+      </button>
+      <button mat-button (click)="loadPhotos('next')">Next<mat-icon color="primary" class="photo-nav">skip_next</mat-icon></button>
+    </div>
+  </div>
+</div>
+<ng-template #loadingPhotos>
+  <mat-progress-spinner class="spinner" color="primary" mode="indeterminate"></mat-progress-spinner>
+</ng-template>

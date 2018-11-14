@@ -1,0 +1,12 @@
+<div class="centered">
+  <h1 mat-dialog-title>Confirm Delete</h1>
+  <div mat-dialog-content>
+    <p>After clicking Ok the photo will be permanently deleted. Are you sure ?</p>
+  </div>
+  <div mat-dialog-actions>
+    <span>
+      <button mat-raised-button (click)="onNoClick()" cdkFocusInitial>No</button>
+      <button mat-raised-button color="warn" [mat-dialog-close]="true">Ok</button>
+    </span>
+  </div>
+</div>

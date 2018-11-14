@@ -1,0 +1,41 @@
+<div *ngIf="!adding && !added;else addingPhoto">
+  <form class="centered" (ngSubmit)="onSubmit(photoForm)" #photoForm="ngForm">
+    <div>
+      <mat-form-field>
+        <input matInput type="text" id="title" required [(ngModel)]="photo.title" name="title" #title="ngModel"
+          autocomplete="off" autofocus placeholder="Photo Title">
+        <mat-error [hidden]="!(title.invalid && (title.dirty || title.touched))" class="alert alert-danger">
+          Title is required
+        </mat-error>
+      </mat-form-field>
+    </div>
+
+    <div class="photo-card centered">
+      <mat-form-field>
+        <input matInput type="text" id="url" required [(ngModel)]="photo.url" name="url" #url="ngModel" autocomplete="off"
+          placeholder="Photo Url">
+        <mat-error [hidden]="!(url.invalid && (url.dirty || url.touched))" class="alert alert-danger">
+          Photo URL is required
+        </mat-error>
+      </mat-form-field>
+      <img mat-card-image *ngIf="photo.url" [src]="photo.url" alt="Photo Url does not exist">
+    </div>
+    <button mat-raised-button color="primary" type="submit" class="btn btn-success" [disabled]="!photoForm.form.valid">Submit</button>
+  </form>
+</div>
+<ng-template #addingPhoto>
+  <mat-progress-spinner *ngIf="!added" class="spinner" color="secondary" mode="indeterminate"></mat-progress-spinner>
+  <div *ngIf="added">
+    <h3 class="centered">The photo was successfully added</h3>
+    <mat-card class="photo-card centered">
+      <div class="centered card-title">{{photo.title}}</div>
+      <img mat-card-image [src]="photo.url" alt="Photo not found">
+      <mat-card-actions>
+        <div class="centered">
+          <button mat-raised-button color="primary" (click)="addNew()">Add another</button>
+          <button mat-raised-button color="primary" [routerLink]="['/photos']">Go to photos</button>
+        </div>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</ng-template>

@@ -1,0 +1,17 @@
+.card-title {
+    padding-bottom: 15px;
+    font-weight: bolder;
+    font-style: oblique;
+}
+.mat-card, img {
+    display: block;
+    margin: 0 auto;
+    max-width: 500px;
+}
+@media only screen and (max-width: 600px) {
+    .mat-card, img {
+        display: block;
+        margin: 0 auto;
+        max-width: 100%;
+    }
+}
