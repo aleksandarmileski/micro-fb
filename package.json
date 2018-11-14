@@ -34,7 +34,7 @@
     "typescript": "~3.1.6"
   },
   "devDependencies": {
-    "express": "^4.16.4",
+    "@angular-devkit/build-angular": "^0.10.6",
     "@angular/cdk": "^7.0.4",
     "@angular/cli": "~7.0.5",
     "@angular/compiler-cli": "~7.0.0",
@@ -44,6 +44,7 @@
     "@types/node": "~8.9.4",
     "codelyzer": "~4.5.0",
     "enhanced-resolve": "^3.3.0",
+    "express": "^4.16.4",
     "jasmine-core": "~2.99.1",
     "jasmine-spec-reporter": "~4.2.1",
     "karma": "~3.0.0",
